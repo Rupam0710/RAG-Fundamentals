@@ -3,3 +3,8 @@ langchain-core
 langchain-community
 pypdf
 pymupdf
+unstructured
+openpyxl
+networkx
+pandas
+msoffcrypto
