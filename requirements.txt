@@ -7,4 +7,7 @@ unstructured
 openpyxl
 networkx
 pandas
-msoffcrypto
+msoffcrypto-tool
+sentence-transformers
+faiss-cpu
+chromadb
