@@ -20,5 +20,6 @@ dependencies = [
     "pypdf>=6.14.2",
     "python-dotenv>=1.2.2",
     "sentence-transformers>=5.6.1",
+    "typesense>=2.0.0",
     "unstructured>=0.24.1",
 ]
