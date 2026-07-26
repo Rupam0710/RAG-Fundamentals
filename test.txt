@@ -1,0 +1,74 @@
+RAG (Retrieval Augmented Generation) on Databricks
+Retrieval-augmented generation (RAG) is a powerful technique that combines large language models (LLMs) with real-time data retrieval to generate more accurate, up-to-date, and contextually relevant responses.
+
+This approach is especially valuable for answering questions about proprietary, frequently changing, or domain-specific information.
+
+What is retrieval-augmented generation?
+In the simplest form, a RAG agent does the following:
+
+Retrieval: The user's request is used to query an outside knowledge base such as a vector store, keyword search, or SQL database. The goal is to get supporting data for the LLM's response.
+Augmentation: The supporting data is combined with the user's request, often using a template with additional formatting and instructions to the LLM, to create a prompt.
+Generation: The prompt is passed to the LLM to generate a response to the user's request.
+The flow of a RAG application from user request to data retrieval and response.
+
+RAG benefits
+RAG improves LLMs in the following ways:
+
+Proprietary knowledge: RAG can include proprietary information not initially used to train the LLM, such as memos, emails, and documents to answer domain-specific questions.
+Up-to-date information: A RAG application can supply the LLM with information from an updated knowledge base.
+Citing sources: RAG enables LLMs to cite specific sources, allowing users to verify the factual accuracy of responses.
+Data security and access control lists (ACL): The retrieval step can be designed to selectively retrieve personal or proprietary information based on user credentials.
+RAG components
+A typical RAG application involves several stages:
+
+Data pipeline: Pre-process and index documents, tables, or other data for fast and accurate retrieval.
+
+RAG chain (Retrieval, Augmentation, Generation): Call a series (or chain) of steps to:
+
+Understand the user's question.
+Retrieve supporting data.
+Augment the prompt with supporting data.
+Generate a response from an LLM using the augmented prompt.
+Evaluation and monitoring: Assess the RAG application to determine its quality, cost, and latency to ensure it meets your business requirements.
+
+Governance and LLMOps: Track and manage the lifecycle of each component, including data lineage and access controls.
+
+Diagram of RAG application components.
+
+Types of RAG data: structured and unstructured
+RAG architecture can work with either unstructured or structured supporting data. The data you use with RAG depends on your use case.
+
+Unstructured data: Data without a specific structure or organization.
+
+PDFs
+Google/Office documents
+Wikis
+Images
+Videos
+Structured data: Tabular data arranged in rows and columns with a specific schema, such as tables in a database.
+
+Customer records in a BI or Data Warehouse system
+Transaction data from a SQL database
+Data from application APIs (e.g., SAP, Salesforce, etc.)
+Evaluation & monitoring
+Evaluation and monitoring help determine if your RAG application meets your quality, cost, and latency requirements. Evaluation occurs during development, while monitoring happens once the application is deployed to production.
+
+RAG over unstructured data has many components that impact quality. For example, data formatting changes can influence the retrieved chunks and the LLM's ability to generate relevant responses. So, it's important to evaluate individual components in addition to the overall application.
+
+For more information, see Agent Evaluation (MLflow 2).
+
+RAG on Databricks
+Databricks offers an end-to-end platform for RAG development, including:
+
+Integrated data pipelines with Delta Lake and Lakeflow pipelines
+Scalable AI Search with Databricks AI Search. (Databricks AI Search was formerly known as Databricks Vector Search.)
+Model serving and orchestration tools
+Gen AI evaluation to improve performance and quality
+Gen AI monitoring for deployed RAG applications
+Built-in governance and security, see Security and Trust Center and AI Gateway.
+Next steps
+Learn about data pipelines, a key component of RAG applications. See Build an unstructured data pipeline for RAG
+
+Use the AI Playground to prototype your own RAG agent. See Get started: Query LLMs and prototype AI agents with no code.
+
+Use Knowledge Assistant create a RAG agent as a chatbot on your documents and as an endpoint that you can use in downstream applications. See Use Knowledge Assistant to create a high-quality chatbot over your documents.
